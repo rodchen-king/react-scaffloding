@@ -2,7 +2,7 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2022-01-05 17:33:25
- * @LastEditTime: 2022-01-06 16:13:03
+ * @LastEditTime: 2022-01-06 16:59:13
  * @LastEditors: rodchen
  */
 import React, { useState } from "react";
@@ -13,6 +13,7 @@ const menus = [
   {
     name: "Dashboard",
     key: "1",
+    icon: "car",
     children: [
       {
         name: "分析页",
@@ -31,6 +32,7 @@ const menus = [
   {
     name: "表单页",
     key: "2",
+    icon: "printer",
     children: [
       {
         name: "基础表单",
@@ -49,6 +51,7 @@ const menus = [
   {
     name: "列表页",
     key: "3",
+    icon: "video",
     children: [
       {
         name: "搜索列表",
@@ -71,6 +74,7 @@ const menus = [
   {
     name: "详情页",
     key: "4",
+    icon: "check-circle",
     children: [
       {
         name: "基础详情页",
@@ -85,6 +89,7 @@ const menus = [
   {
     name: "结果页",
     key: "5",
+    icon: "user",
     children: [
       {
         name: "成功页",
@@ -99,6 +104,7 @@ const menus = [
   {
     name: "结果页",
     key: "6",
+    icon: "error",
     children: [
       {
         name: "403",
@@ -117,6 +123,7 @@ const menus = [
   {
     name: "个人页",
     key: "7",
+    icon: "highlight",
     children: [
       {
         name: "个人中心",
@@ -131,6 +138,7 @@ const menus = [
   {
     name: "图形编辑器",
     key: "8",
+    icon: "wrench",
     children: [
       {
         name: "流程编辑器",
@@ -151,10 +159,13 @@ const menus = [
 const Layout = () => {
   const [selectMenu, UpdateSelectMenu] = useState("1");
   const [selectSubMenu, UpdateSelectSubMenu] = useState("1-1");
+  const [openColldent, UpdateOpenColldent] = useState(true);
 
   return (
     <div className="g-ant">
-      <div className="g-ant__sider">
+      <div
+        className={`g-ant__sider ${!openColldent && "g-ant__sider--closed"}`}
+      >
         <div className="g-ant-sider__wrap g-ant-sider__wrap--fixed">
           <div className="g-ant-sider__head">
             <a className="m-logo" href="#">
@@ -174,7 +185,7 @@ const Layout = () => {
                 }}
               >
                 <div className="m-menu__title ">
-                  <i className="iconfont icon-printer"></i>
+                  <i className={`iconfont icon-${menu.icon}`}></i>
                   <span>{menu.name}</span>
                   <i
                     className={`iconfont ${
@@ -213,7 +224,14 @@ const Layout = () => {
             ))}
           </ul>
           <div className="g-ant-sider__foot">
-            <i className="iconfont icon-outdent u-bar"></i>
+            <i
+              className={`iconfont ${
+                openColldent ? "icon-outdent" : "icon-outdent"
+              } u-bar`}
+              onClick={() => {
+                UpdateOpenColldent(!openColldent);
+              }}
+            ></i>
           </div>
         </div>
       </div>
