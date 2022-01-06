@@ -2,18 +2,19 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2022-01-06 11:17:01
- * @LastEditTime: 2022-01-06 16:08:45
+ * @LastEditTime: 2022-01-06 16:11:08
  * @LastEditors: rodchen
  */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./normalize.less";
-import App from "./App";
+import Layout from "./layouts";
+import "./assets/iconfont/iconfont.css";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Layout />
   </React.StrictMode>,
   document.getElementById("root")
 );
