@@ -1,0 +1,6 @@
+build
+*.html
+*.test.tsx
+react-app-env.d.ts
+setupTests.ts
+reportWebVitals.ts
