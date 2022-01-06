@@ -2,12 +2,12 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2022-01-06 11:17:01
- * @LastEditTime: 2022-01-06 14:39:45
+ * @LastEditTime: 2022-01-06 15:42:37
  * @LastEditors: rodchen
  */
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.less";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
